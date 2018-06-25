@@ -9,7 +9,9 @@ def count_words(text_file):
     for line in words_file:
         line = line.split()
         for word in line:
-            words_count[word] = words_count.get(word, 0) + 1
+            word = word.strip('./,()"[]!:;$').lower()
+            if word.isalpha() is True:
+                words_count[word] = words_count.get(word, 0) + 1
 
     words_file.close()
     return words_count
