@@ -1,3 +1,4 @@
+import sys
 
 
 def count_words(text_file):
@@ -24,5 +25,12 @@ def prints_words_count(dict):
         print(f"{word}: {count}")
 
 
-words_count = count_words("twain.txt")
+# words_count = count_words(text_file)
+# prints_words_count(words_count)
+
+
+filename = sys.argv[0]
+text_file = sys.argv[1]
+
+words_count = count_words(str(text_file))
 prints_words_count(words_count)
